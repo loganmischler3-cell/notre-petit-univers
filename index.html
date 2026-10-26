@@ -137,6 +137,43 @@ button:hover{
  color:#d46c97;
 }
 
+/* Photo d'accueil façon Polaroid */
+
+.hero-polaroid{
+ width:min(390px,88%);
+ margin:35px auto 25px;
+ padding:12px 12px 25px;
+ background:#fff;
+ border-radius:5px;
+ box-shadow:0 15px 40px #74445930;
+ transform:rotate(-2deg);
+ transition:transform .4s,box-shadow .4s;
+}
+
+.hero-polaroid:hover{
+ transform:rotate(0deg) scale(1.025);
+ box-shadow:0 20px 45px #74445938;
+}
+
+.hero-polaroid img{
+ display:block;
+ width:100%;
+ height:auto;
+ max-height:570px;
+ object-fit:contain;
+ border-radius:3px;
+ background:#f8e7ee;
+}
+
+.hero-caption{
+ padding:22px 8px 0;
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(30px,5vw,43px);
+ line-height:1.3;
+ text-align:center;
+ color:#a83e6c;
+}
+
 /* Galerie souvenirs */
 
 .intro-gallery{
@@ -206,6 +243,30 @@ button:hover{
  margin:20px 0;
 }
 
+.bouquet-message{
+ max-width:650px;
+ margin:25px auto;
+ padding:25px;
+ border:1px solid #efbfd2;
+ border-radius:20px;
+ background:linear-gradient(135deg,#fff4f8,#fffafd);
+ animation:appear .9s ease;
+}
+
+.bouquet-message h3{
+ font-family:'Great Vibes',cursive;
+ color:#b74775;
+ font-size:clamp(34px,6vw,48px);
+ font-weight:normal;
+ margin:0 0 12px;
+}
+
+.bouquet-message p{
+ font-size:clamp(17px,2.5vw,20px);
+}
+
+/* Énigme */
+
 input{
  padding:14px 16px;
  border:1px solid #e7a9c2;
@@ -217,9 +278,7 @@ input{
  outline-color:#d47a9f;
 }
 
-.message{
- min-height:28px;
-}
+.message{min-height:28px}
 
 /* Lettre finale */
 
@@ -317,6 +376,7 @@ footer{
  .polaroid img{height:200px}
  .caption{font-size:15px;padding-top:12px}
  .card{border-radius:22px}
+ .hero-polaroid{width:min(340px,92%)}
 }
 </style>
 </head>
@@ -325,12 +385,21 @@ footer{
 
 <header>
  <div class="small">✧ Un petit monde rien qu'à nous ✧</div>
+
  <h1>Notre petit<br>univers</h1>
+
  <p>
   Pour Cécile, de la part de Logan.<br>
   J'ai préparé quelques petites surprises pour te rappeler à quel point tu comptes pour moi. 💗
  </p>
+
  <div class="date">Depuis le 1er janvier 2025 ♡</div>
+
+ <div class="hero-polaroid">
+  <img src="images/18ans.jpg" alt="Un souvenir précieux de Logan et Cécile">
+  <div class="hero-caption">Je t'aime chaque jour un peu plus.</div>
+ </div>
+
  <p><button onclick="go('accueil')">Entrer dans notre conte ✨</button></p>
 </header>
 
@@ -338,18 +407,23 @@ footer{
 
 <section class="card center" id="accueil">
  <div class="heart">♡</div>
+
  <h2>Bienvenue, mon amour</h2>
+
  <p>
   Un petit chemin plein de souvenirs, de tendresse et de magie t'attend.
   Prends ton temps : chaque étape a été préparée spécialement pour toi.
  </p>
+
  <button onclick="show('souvenirs')">Revivre nos souvenirs 📸</button>
 </section>
 
 <section class="card hidden" id="souvenirs">
+
  <div class="center">
   <div class="small">✧ Nos petits instants ✧</div>
   <h2>Un album de nous deux 💗</h2>
+
   <p class="intro-gallery">
    Ce sont parfois les choses les plus simples qui deviennent les plus beaux souvenirs.
    Et moi, je suis heureux de pouvoir les partager avec toi.
@@ -403,47 +477,73 @@ footer{
 
 <section class="card hidden center" id="jardin">
  <h2>🌷 Ton jardin magique</h2>
+
  <p>Un petit bouquet virtuel, juste pour toi. Clique et regarde-le fleurir !</p>
+
  <div class="flowers" id="bouquet">♡　✿　♡</div>
- <button onclick="fleurir()">Faire fleurir le jardin ✨</button>
- <br>
+
+ <button id="bouton-fleurs" onclick="fleurir()">Faire fleurir le jardin ✨</button>
+
+ <div class="bouquet-message hidden" id="message-bouquet" aria-live="polite">
+  <h3>Une petite surprise pour toi… 💗</h3>
+  <p>
+   Maintenant, mon amour, prends une petite seconde…
+   et retourne-toi doucement. ❤️
+  </p>
+  <p>
+   J'ai quelque chose pour toi, juste ici, en vrai.
+   Joyeux anniversaire, ma Cécile. 🌷
+  </p>
+  <p><i>Je t'aime plus que les mots ne pourront jamais le dire.</i></p>
+ </div>
+
  <button class="secondary" onclick="show('enigme')">Continuer l'aventure →</button>
 </section>
 
 <section class="card hidden center" id="enigme">
  <h2>🗝️ Une petite énigme pour toi</h2>
+
  <p>
   Mon amour, ton petit trésor se cache quelque part dans la maison. ❤️
   Pour le trouver, fais appel à ton instinct…
  </p>
+
  <p>
   Cherche un endroit où les bonnes choses attendent patiemment leur heure,
   où se cachent de quoi préparer de délicieux repas et où nos petites envies
   gourmandes trouvent leur bonheur.
  </p>
+
  <p><i>Tu chauffes, mon cœur… 💗</i></p>
+
  <button onclick="show('musique')">J'ai une petite idée… 🎁</button>
 </section>
 
 <section class="card hidden center" id="musique">
  <div class="heart">♫</div>
+
  <h2>Une chanson pour toi 🎵</h2>
+
  <p>
   Il y a des chansons qui savent dire ce que les mots n'arrivent pas toujours à exprimer.
   Celle-ci me fait penser à toi, à nous, et à tout ce que je ressens pour toi. ❤️
  </p>
- <a href="https://open.spotify.com/intl-fr/track/4GOHKaImdV8EHdxUBzTEOV?si=d81b3121afcb4681"
+
+ <a href="https://open.spotify.com/intl-fr/track/4GOHKaImdV8EHdxUBzTEOV?si=2d8f4415a6c14748"
     target="_blank" rel="noopener noreferrer">
   <button>Écouter notre chanson ♡</button>
  </a>
+
  <p style="margin-top:25px">
   Prends quelques minutes pour l'écouter, mon amour. 💗
  </p>
+
  <button onclick="show('lettre-finale')">Lire ma lettre d'amour 💌</button>
 </section>
 
 <section class="card hidden center" id="lettre-finale">
  <div class="small">✧ Du fond de mon cœur ✧</div>
+
  <h2>💌 Une lettre pour toi</h2>
 
  <div class="letter-paper">
@@ -486,7 +586,11 @@ function go(id){
 
 function show(id){
  const section=document.getElementById(id);
+
+ if(!section) return;
+
  section.classList.remove('hidden');
+
  setTimeout(()=>{
   section.scrollIntoView({
    behavior:'smooth',
@@ -497,7 +601,11 @@ function show(id){
 
 function fleurir(){
  const bouquet=document.getElementById('bouquet');
+ const message=document.getElementById('message-bouquet');
+ const bouton=document.getElementById('bouton-fleurs');
+
  bouquet.textContent='🌷　🌸　🌷　💗　🌼　🌷　🌸';
+
  bouquet.animate(
   [
    {transform:'scale(.7)',opacity:.3},
@@ -506,16 +614,29 @@ function fleurir(){
   ],
   {duration:800,easing:'ease-out'}
  );
+
+ message.classList.remove('hidden');
+ bouton.textContent='Le jardin est en fleurs 💗';
+ bouton.disabled=true;
+ bouton.style.opacity='.8';
+
+ message.scrollIntoView({
+  behavior:'smooth',
+  block:'center'
+ });
 }
 
 function coeurFlottant(){
  const coeur=document.createElement('span');
+
  coeur.className='floating-heart';
  coeur.textContent=Math.random()>.5?'♡':'♥';
  coeur.style.left=Math.random()*100+'vw';
  coeur.style.fontSize=(14+Math.random()*20)+'px';
  coeur.style.animationDuration=(7+Math.random()*5)+'s';
+
  document.body.appendChild(coeur);
+
  setTimeout(()=>coeur.remove(),12500);
 }
 
