@@ -4,378 +4,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff0f6">
+<meta name="theme-color" content="#ffe8f1">
 <title>Notre petit univers 💗</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --pink: #c85d88;
-  --deep-pink: #a94370;
-  --pale-pink: #fff0f6;
-  --lavender: #f1e8ff;
-  --text: #704054;
-  --paper: #fffdf9;
+*{box-sizing:border-box}
+
+:root{
+ --pink:#c65c87;
+ --deep-pink:#a83e6c;
+ --text:#704054;
+ --border:#f0c1d4;
 }
 
-* { box-sizing: border-box; }
+html{scroll-behavior:smooth}
 
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
-  background:
-    radial-gradient(ellipse at 10% 10%, #ffffff 0, transparent 38%),
-    linear-gradient(140deg, #fff7fa, #ffe5ef 48%, #f0e7ff);
-  min-height: 100vh;
-  overflow-x: hidden;
+body{
+ margin:0;
+ font-family:'Playfair Display',Georgia,serif;
+ color:var(--text);
+ background:linear-gradient(135deg,#fff8fb,#ffe5ef,#f2eaff);
+ min-height:100vh;
+ overflow-x:hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: .4;
-  background-image: radial-gradient(#e8a7c4 1px, transparent 1px);
-  background-size: 27px 27px;
+body::before{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ opacity:.35;
+ background-image:radial-gradient(#fff 1.5px,transparent 1.5px);
+ background-size:35px 35px;
+ z-index:-1;
 }
 
-button, input { font: inherit; }
-
-button {
-  border: 0;
-  border-radius: 30px;
-  padding: 14px 23px;
-  margin: 7px 4px;
-  color: white;
-  background: linear-gradient(135deg, #df8caf, #b94d7b);
-  box-shadow: 0 7px 18px #b94d7b25;
-  cursor: pointer;
-  transition: transform .25s, box-shadow .25s;
+header{
+ text-align:center;
+ padding:75px 20px 45px;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px #b94d7b35;
+.small{
+ letter-spacing:4px;
+ text-transform:uppercase;
+ font:11px Arial,sans-serif;
+ color:#b15e80;
 }
 
-button:focus-visible, a:focus-visible {
-  outline: 3px solid #a94370;
-  outline-offset: 4px;
+h1{
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(65px,11vw,110px);
+ font-weight:normal;
+ color:#bb507b;
+ line-height:1.05;
+ margin:25px 0;
 }
 
-.secondary {
-  background: #fff;
-  color: var(--deep-pink);
-  border: 1px solid #edbfd2;
-  box-shadow: none;
+h2{
+ font-size:clamp(26px,5vw,35px);
+ font-weight:normal;
+ color:#b74775;
+ margin-top:10px;
 }
 
-header {
-  position: relative;
-  text-align: center;
-  padding: 76px 20px 55px;
+p{line-height:1.9}
+
+header p{
+ max-width:600px;
+ margin:15px auto;
+ font-size:18px;
 }
 
-.small {
-  color: #b15e80;
-  font: 11px Arial, sans-serif;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.date{
+ display:inline-block;
+ padding:11px 20px;
+ border:1px solid #edb4cb;
+ border-radius:30px;
+ background:#ffffffa8;
 }
 
-h1, h2, h3 { font-weight: normal; }
-
-h1 {
-  color: #bb507b;
-  font-size: clamp(46px, 9vw, 82px);
-  line-height: 1.04;
-  margin: 22px 0;
+main{
+ width:min(1100px,94%);
+ margin:auto;
 }
 
-h2 {
-  color: #b74775;
-  font-size: clamp(26px, 5vw, 36px);
-  margin: 12px 0 18px;
+.card{
+ background:#ffffffd9;
+ border:1px solid var(--border);
+ border-radius:28px;
+ padding:clamp(22px,5vw,40px);
+ margin:28px 0;
+ box-shadow:0 15px 45px #b45b7918;
+ animation:appear .8s ease;
+ backdrop-filter:blur(8px);
 }
 
-h3 {
-  color: #a94370;
-  font-size: 22px;
+.center{text-align:center}
+.hidden{display:none!important}
+
+button{
+ border:0;
+ border-radius:30px;
+ padding:15px 24px;
+ margin:10px 4px;
+ background:linear-gradient(135deg,#df86aa,#b94d7b);
+ color:white;
+ font-family:inherit;
+ font-size:15px;
+ cursor:pointer;
+ transition:transform .25s,box-shadow .25s;
+ box-shadow:0 6px 18px #b94d7b25;
 }
 
-p { line-height: 1.85; }
-
-header p {
-  max-width: 590px;
-  margin: 16px auto;
-  font-size: 18px;
+button:hover{
+ transform:translateY(-3px);
+ box-shadow:0 10px 22px #b94d7b35;
 }
 
-.date {
-  display: inline-block;
-  padding: 10px 18px;
-  margin-top: 10px;
-  border: 1px solid #edb4cb;
-  border-radius: 30px;
-  background: #ffffffa8;
+.secondary{
+ background:#fff;
+ color:#b74775;
+ border:1px solid #e7a9c2;
 }
 
-main {
-  width: min(1000px, 92%);
-  margin: auto;
+.heart{
+ font-size:45px;
+ animation:pulse 1.8s infinite;
+ color:#d46c97;
 }
 
-.card {
-  position: relative;
-  margin: 26px 0;
-  padding: clamp(23px, 5vw, 42px);
-  border: 1px solid #f2c4d7;
-  border-radius: 28px;
-  background: #ffffffc9;
-  box-shadow: 0 15px 40px #b45b7914;
-  animation: appear .7s ease both;
+/* Galerie souvenirs */
+
+.intro-gallery{
+ max-width:650px;
+ margin:0 auto 30px;
 }
 
-.center { text-align: center; }
-
-.hidden { display: none !important; }
-
-.heart {
-  display: inline-block;
-  font-size: 45px;
-  color: #d36c96;
-  animation: heartbeat 2s ease-in-out infinite;
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:28px;
+ align-items:start;
+ margin-top:35px;
 }
 
-.eyebrow {
-  color: #bd7392;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.polaroid{
+ background:#fff;
+ padding:12px 12px 24px;
+ border-radius:5px;
+ box-shadow:0 9px 25px #74445920;
+ transition:transform .35s,box-shadow .35s;
+ animation:appear .8s ease both;
 }
 
-.hero-photo {
-  width: min(100%, 620px);
-  display: block;
-  margin: 30px auto 22px;
-  padding: 11px 11px 48px;
-  background: white;
-  box-shadow: 0 14px 35px #74415825;
-  transform: rotate(-1deg);
-  transition: transform .4s;
+.polaroid:nth-child(odd){transform:rotate(-1.5deg)}
+.polaroid:nth-child(even){transform:rotate(1.5deg)}
+
+.polaroid:hover{
+ transform:rotate(0) translateY(-7px) scale(1.025);
+ box-shadow:0 18px 35px #74445930;
+ z-index:2;
 }
 
-.hero-photo:hover { transform: rotate(0) scale(1.015); }
-
-.hero-photo img {
-  width: 100%;
-  height: clamp(230px, 50vw, 430px);
-  object-fit: cover;
-  display: block;
+.polaroid img{
+ display:block;
+ width:100%;
+ height:clamp(200px,32vw,370px);
+ object-fit:cover;
+ border-radius:3px;
+ background:#f8e7ee;
 }
 
-.handwriting {
-  font-family: "Caveat", cursive;
-  font-size: 27px;
-  color: #a94370;
+.caption{
+ padding:19px 8px 0;
+ text-align:center;
+ color:#82465f;
+ font-size:clamp(16px,2vw,21px);
+ line-height:1.55;
+ font-style:italic;
 }
 
-.hero-caption {
-  margin-top: -43px;
-  margin-bottom: 35px;
-  position: relative;
-  pointer-events: none;
+.caption::before{
+ content:"♡";
+ display:block;
+ color:#d47a9f;
+ font-size:23px;
+ margin-bottom:7px;
+ font-style:normal;
 }
 
-.album-intro {
-  max-width: 620px;
-  margin: 0 auto 30px;
+/* Bouquet */
+
+.flowers{
+ font-size:clamp(34px,7vw,54px);
+ line-height:1.8;
+ min-height:90px;
+ margin:20px 0;
 }
 
-.polaroids {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 22px;
-  align-items: start;
-  padding: 12px 4px 25px;
+input{
+ padding:14px 16px;
+ border:1px solid #e7a9c2;
+ border-radius:14px;
+ font-size:16px;
+ max-width:100%;
+ font-family:inherit;
+ color:var(--text);
+ outline-color:#d47a9f;
 }
 
-.polaroid {
-  min-width: 0;
-  padding: 10px 10px 15px;
-  background: var(--paper);
-  box-shadow: 0 9px 22px #73445b20;
-  transform: rotate(var(--tilt, -2deg));
-  transition: transform .35s, box-shadow .35s;
-  animation: appear .7s ease both;
+.message{
+ min-height:28px;
 }
 
-.polaroid:nth-child(even) { --tilt: 2.5deg; }
-.polaroid:nth-child(3n) { --tilt: -1deg; }
+/* Lettre finale */
 
-.polaroid:hover {
-  transform: rotate(0) translateY(-7px) scale(1.025);
-  box-shadow: 0 16px 32px #73445b30;
-  z-index: 2;
+.letter-paper{
+ position:relative;
+ max-width:760px;
+ margin:30px auto 5px;
+ padding:clamp(28px,6vw,65px);
+ background:
+  repeating-linear-gradient(
+   transparent,
+   transparent 35px,
+   #d9b5bd30 36px
+  ),
+  #fffaf0;
+ border:1px solid #e8d6c5;
+ box-shadow:0 12px 35px #8c58651c;
+ text-align:left;
+ transform:rotate(-.4deg);
 }
 
-.polaroid img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: #f9e5ed;
+.letter-paper::before{
+ content:"";
+ position:absolute;
+ inset:10px;
+ border:1px solid #e6c7c7;
+ pointer-events:none;
 }
 
-.polaroid figcaption {
-  padding: 11px 3px 0;
-  min-height: 52px;
-  text-align: center;
-  font-family: "Caveat", cursive;
-  font-size: clamp(18px, 2.5vw, 25px);
-  line-height: 1.1;
+.letter-heading{
+ font-family:'Great Vibes',cursive;
+ text-align:center;
+ font-size:clamp(40px,8vw,65px);
+ color:#b74775;
+ margin:0 0 25px;
 }
 
-.letter-paper {
-  max-width: 720px;
-  margin: 25px auto;
-  padding: clamp(25px, 5vw, 48px);
-  color: #6e4a45;
-  background:
-    linear-gradient(#fffdf8e8, #fffdf8e8),
-    repeating-linear-gradient(0deg, #e8d9c9 0, #e8d9c9 1px, transparent 1px, transparent 32px);
-  border: 1px solid #ead9c9;
-  box-shadow: 0 10px 30px #74415812;
-  transform: rotate(-.3deg);
+.letter{
+ white-space:pre-line;
+ font-size:clamp(17px,2.5vw,20px);
+ line-height:2;
+ color:#684653;
 }
 
-.letter {
-  white-space: pre-line;
-  font-family: "Caveat", cursive;
-  font-size: clamp(22px, 3.5vw, 28px);
-  line-height: 1.65;
-  text-align: left;
+.signature{
+ font-family:'Great Vibes',cursive;
+ font-size:38px;
+ color:#b74775;
+ text-align:right;
+ margin-top:25px;
 }
 
-.bouquet {
-  min-height: 135px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  gap: 5px;
-  font-size: clamp(35px, 7vw, 58px);
-  margin: 20px 0;
+footer{
+ text-align:center;
+ padding:35px 20px;
+ font:12px Arial,sans-serif;
+ color:#9d7184;
 }
 
-.bouquet span {
-  display: inline-block;
-  transform-origin: bottom center;
-  animation: sway 2.2s ease-in-out infinite alternate;
+/* Petits cœurs flottants */
+
+.floating-heart{
+ position:fixed;
+ bottom:-40px;
+ pointer-events:none;
+ z-index:5;
+ animation:floatUp linear forwards;
+ opacity:.7;
 }
 
-.bouquet span:nth-child(even) { animation-delay: -.8s; }
-.bouquet span:nth-child(3n) { animation-delay: -1.3s; }
-
-.clue {
-  margin: 20px 0;
-  padding: 23px;
-  text-align: left;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #fff7fa, #f9f1ff);
-  border: 1px solid #f0d3e1;
+@keyframes pulse{
+ 50%{transform:scale(1.15)}
 }
 
-.clue p { margin-bottom: 0; }
-
-.clue-number {
-  color: #bc6289;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
 }
 
-.clue-final {
-  text-align: center;
-  font-family: "Caveat", cursive;
-  font-size: 29px;
-  color: #a94370;
+@keyframes floatUp{
+ from{transform:translateY(0) rotate(0deg);opacity:0}
+ 15%{opacity:.7}
+ to{transform:translateY(-110vh) rotate(35deg);opacity:0}
 }
 
-.spotify-link {
-  display: inline-block;
-  text-decoration: none;
+@media(min-width:800px){
+ .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .polaroid:nth-child(7){grid-column:2}
 }
 
-.spotify-link button { margin-top: 10px; }
-
-.final-heart {
-  font-size: 48px;
-  animation: heartbeat 1.8s infinite;
-}
-
-.sparkle {
-  position: fixed;
-  bottom: -40px;
-  z-index: 5;
-  pointer-events: none;
-  animation: floatUp linear forwards;
-  opacity: .8;
-}
-
-footer {
-  text-align: center;
-  padding: 35px 15px 45px;
-  font: 12px Arial, sans-serif;
-  color: #9d7184;
-}
-
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.13); }
-}
-
-@keyframes sway {
-  from { transform: rotate(-5deg) translateY(2px); }
-  to { transform: rotate(5deg) translateY(-4px); }
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatUp {
-  from { transform: translateY(0) rotate(0); opacity: 0; }
-  15% { opacity: .8; }
-  to { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
-}
-
-@media (max-width: 720px) {
-  header { padding-top: 52px; }
-  .polaroids { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 13px; }
-  .card { border-radius: 22px; }
-}
-
-@media (max-width: 390px) {
-  .polaroids { grid-template-columns: 1fr; max-width: 290px; margin: auto; }
-  .polaroid img { aspect-ratio: 4 / 4.5; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
+@media(max-width:480px){
+ header{padding-top:55px}
+ .gallery{gap:17px}
+ .polaroid{padding:8px 8px 17px}
+ .polaroid img{height:200px}
+ .caption{font-size:15px;padding-top:12px}
+ .card{border-radius:22px}
 }
 </style>
 </head>
@@ -383,247 +324,202 @@ footer {
 <body>
 
 <header>
-  <div class="small">✧ Un petit monde rien qu'à nous ✧</div>
-  <h1>Notre petit<br>univers</h1>
-  <p>Pour Cécile, de la part de Logan.<br>
-  J'ai préparé quelques petites surprises pour te rappeler à quel point tu comptes pour moi. 💗</p>
-  <div class="date">Depuis le 1er janvier 2025 ♡</div>
-  <div class="hero-photo">
-    <img src="images/tulipes.jpg.jpg" alt="Logan et Cécile dans un champ de tulipes">
-  </div>
-  <div class="hero-caption handwriting">Un monde plus beau depuis que tu en fais partie ♡</div>
-  <button onclick="go('accueil')">Entrer dans notre conte ✨</button>
+ <div class="small">✧ Un petit monde rien qu'à nous ✧</div>
+ <h1>Notre petit<br>univers</h1>
+ <p>
+  Pour Cécile, de la part de Logan.<br>
+  J'ai préparé quelques petites surprises pour te rappeler à quel point tu comptes pour moi. 💗
+ </p>
+ <div class="date">Depuis le 1er janvier 2025 ♡</div>
+ <p><button onclick="go('accueil')">Entrer dans notre conte ✨</button></p>
 </header>
 
 <main>
 
 <section class="card center" id="accueil">
-  <div class="heart">♡</div>
-  <p class="eyebrow">Une petite surprise pour toi</p>
-  <h2>Bienvenue, mon amour</h2>
-  <p>Un petit chemin plein de souvenirs, de tendresse et de magie t'attend. Prends ton temps : chaque étape a été préparée spécialement pour toi.</p>
-  <button onclick="show('album')">Ouvrir notre album 📸</button>
+ <div class="heart">♡</div>
+ <h2>Bienvenue, mon amour</h2>
+ <p>
+  Un petit chemin plein de souvenirs, de tendresse et de magie t'attend.
+  Prends ton temps : chaque étape a été préparée spécialement pour toi.
+ </p>
+ <button onclick="show('souvenirs')">Revivre nos souvenirs 📸</button>
 </section>
 
-<section class="card hidden" id="album">
-  <div class="center">
-    <p class="eyebrow">Nos instants précieux</p>
-    <h2>Notre album de souvenirs 💗</h2>
-    <p class="album-intro">Quelques photos, beaucoup de souvenirs, et une personne avec qui j'ai envie d'en créer encore mille autres. Chaque instant avec toi a quelque chose de précieux.</p>
-  </div>
+<section class="card hidden" id="souvenirs">
+ <div class="center">
+  <div class="small">✧ Nos petits instants ✧</div>
+  <h2>Un album de nous deux 💗</h2>
+  <p class="intro-gallery">
+   Ce sont parfois les choses les plus simples qui deviennent les plus beaux souvenirs.
+   Et moi, je suis heureux de pouvoir les partager avec toi.
+  </p>
+ </div>
 
-  <div class="polaroids">
-    <figure class="polaroid">
-      <img src="images/tulipes.jpg.jpg" alt="Nous deux au milieu des tulipes" loading="lazy">
-      <figcaption>Un printemps avec toi 🌷</figcaption>
-    </figure>
+ <div class="gallery">
 
-    <figure class="polaroid">
-      <img src="images/terrasse.jpg.jpg" alt="Nous deux en terrasse" loading="lazy">
-      <figcaption>Les petits bonheurs 🍦</figcaption>
-    </figure>
+  <article class="polaroid">
+   <img src="images/souvenir.jpg.jpg" alt="Un souvenir de nous deux">
+   <div class="caption">Pour tous nos petits plaisirs de la vie simple que je partage tous les jours avec toi.</div>
+  </article>
 
-    <figure class="polaroid">
-      <img src="images/souvenir.jpg.jpg" alt="Un joli souvenir à deux" loading="lazy">
-      <figcaption>Mon endroit préféré, c'est près de toi ♡</figcaption>
-    </figure>
+  <article class="polaroid">
+   <img src="images/miroir-rose.jpg.jpg" alt="Un moment devant le miroir">
+   <div class="caption">Pour tous nos matins à nous préparer ensemble.</div>
+  </article>
 
-    <figure class="polaroid">
-      <img src="images/miroir-rose.jpg.jpg" alt="Notre selfie avec le sweat rose" loading="lazy">
-      <figcaption>Notre petit cocon 🩷</figcaption>
-    </figure>
+  <article class="polaroid">
+   <img src="images/miroir-vert.jpg.jpg" alt="Un souvenir devant le miroir">
+   <div class="caption">Pour notre façon d'être, tout simplement nous. ❤️</div>
+  </article>
 
-    <figure class="polaroid">
-      <img src="images/miroir-vert.jpg.jpg" alt="Notre selfie devant le miroir" loading="lazy">
-      <figcaption>Juste nous, tout simplement</figcaption>
-    </figure>
+  <article class="polaroid">
+   <img src="images/anniversaire.jpg.jpg" alt="Un souvenir d'anniversaire">
+   <div class="caption">Pour tout l'amour que j'ai à te donner.</div>
+  </article>
 
-    <figure class="polaroid">
-      <img src="images/anniversaire.jpg.jpg" alt="Nous deux sous une arche de ballons" loading="lazy">
-      <figcaption>Notre bulle à nous 🎈</figcaption>
-    </figure>
+  <article class="polaroid">
+   <img src="images/pise.jpg.jpg" alt="Nous deux à Pise">
+   <div class="caption">Pour tous les voyages qui nous attendent.</div>
+  </article>
 
-    <figure class="polaroid">
-      <img src="images/pise.jpg.jpg" alt="Nous deux devant la tour de Pise" loading="lazy">
-      <figcaption>Un bisou au bout du monde 💋</figcaption>
-    </figure>
-  </div>
+  <article class="polaroid">
+   <img src="images/tulipes.jpg.jpg" alt="Nous deux au milieu des tulipes">
+   <div class="caption">Pour tous les printemps qu'il nous reste à passer à tes côtés.</div>
+  </article>
 
-  <div class="center">
-    <p class="handwriting">Et ce n'est que le début de notre album… 💕</p>
-    <button onclick="show('lettre')">Une lettre pour toi 💌</button>
-  </div>
-</section>
+  <article class="polaroid">
+   <img src="images/terrasse.jpg.jpg" alt="Un moment ensemble en terrasse">
+   <div class="caption">Pour toutes nos soirées à nous faire rire l'un l'autre.</div>
+  </article>
 
-<section class="card hidden" id="lettre">
-  <div class="center">
-    <p class="eyebrow">Quelques mots du cœur</p>
-    <h2>💌 Une lettre pour toi</h2>
-  </div>
+ </div>
 
-  <div class="letter-paper">
-    <p class="letter">Ma Cécile,
-
-Depuis le 1er janvier 2025, nous écrivons notre histoire, un jour après l'autre. Je voulais t'offrir quelque chose qui ne soit pas simplement un objet, mais un petit endroit où retrouver tout l'amour que j'ai pour toi.
-
-Merci pour les moments qu'on partage, les sourires, les petites habitudes et tous les souvenirs qu'il nous reste à créer. Tu as une place toute particulière dans ma vie, et j'espère te le montrer encore longtemps, par les grandes déclarations comme par les petits gestes du quotidien.
-
-Joyeux anniversaire, mon amour. ❤️
-
-Ton Logan</p>
-  </div>
-
-  <div class="center">
-    <button onclick="window.print()" class="secondary">Imprimer cette lettre 🖨️</button>
-    <br>
-    <button onclick="show('jardin')">Une fleur pour toi 🌷</button>
-  </div>
+ <div class="center" style="margin-top:35px">
+  <p>Et ce n'est que le début de tous les souvenirs qu'il nous reste à créer… ✨</p>
+  <button onclick="show('jardin')">Une fleur pour toi 🌷</button>
+ </div>
 </section>
 
 <section class="card hidden center" id="jardin">
-  <p class="eyebrow">Cueilli rien que pour toi</p>
-  <h2>🌷 Ton jardin magique</h2>
-  <p>Un petit bouquet virtuel, juste pour toi. Appuie sur le bouton et regarde-le fleurir !</p>
-  <div class="bouquet" id="bouquet" aria-live="polite">
-    <span>🌷</span><span>🌸</span><span>🌷</span>
-  </div>
-  <button onclick="fleurir()">Faire fleurir le jardin ✨</button>
-  <br>
-  <button class="secondary" onclick="show('enigme')">Continuer l'aventure →</button>
+ <h2>🌷 Ton jardin magique</h2>
+ <p>Un petit bouquet virtuel, juste pour toi. Clique et regarde-le fleurir !</p>
+ <div class="flowers" id="bouquet">♡　✿　♡</div>
+ <button onclick="fleurir()">Faire fleurir le jardin ✨</button>
+ <br>
+ <button class="secondary" onclick="show('enigme')">Continuer l'aventure →</button>
 </section>
 
-<section class="card hidden" id="enigme">
-  <div class="center">
-    <p class="eyebrow">Une dernière petite mission</p>
-    <h2>🗝️ Trouve ton cadeau dans l'appartement</h2>
-    <p>Mon amour, ton petit trésor se cache quelque part dans notre petit cocon. ❤️</p>
-    <p>Pour le trouver, il va falloir faire appel à ton instinct… Cherche dans un endroit où les bonnes choses attendent patiemment leur heure, où se cachent de quoi préparer de délicieux repas et où nos petites envies gourmandes trouvent leur bonheur.</p>
-    <p class="handwriting">Tu chauffes, mon cœur… 💗</p>
-  </div>
-
-  <div class="clue">
-    <div class="clue-number">Indice n° 1 · Notre petit cocon</div>
-    <p>Ton trésor se trouve quelque part dans l'appartement. Prends ton temps, regarde autour de toi et suis ton instinct. 💕</p>
-  </div>
-
-  <div class="clue">
-    <div class="clue-number">Indice n° 2 · Les bonnes choses</div>
-    <p>Cherche un endroit où l'on range ce qui nous aide à préparer de délicieux repas et où nos petites envies gourmandes attendent leur tour. 🍪</p>
-  </div>
-
-  <div class="clue">
-    <div class="clue-number">Indice n° 3 · Tu chauffes !</div>
-    <p>Ce n'est ni le frigo, ni le four… mais un endroit de la cuisine où l'on garde des provisions et des petits plaisirs à grignoter. 👀</p>
-  </div>
-
-  <div class="clue">
-    <div class="clue-number">Un dernier mot de ton Logan</div>
-    <p class="clue-final">Le plus beau trésor, c'est de partager ma vie avec toi. ❤️</p>
-  </div>
-
-  <div class="center">
-    <button onclick="show('musique')">Un peu de musique pour la suite 🎵</button>
-  </div>
+<section class="card hidden center" id="enigme">
+ <h2>🗝️ Une petite énigme pour toi</h2>
+ <p>
+  Mon amour, ton petit trésor se cache quelque part dans la maison. ❤️
+  Pour le trouver, fais appel à ton instinct…
+ </p>
+ <p>
+  Cherche un endroit où les bonnes choses attendent patiemment leur heure,
+  où se cachent de quoi préparer de délicieux repas et où nos petites envies
+  gourmandes trouvent leur bonheur.
+ </p>
+ <p><i>Tu chauffes, mon cœur… 💗</i></p>
+ <button onclick="show('musique')">J'ai une petite idée… 🎁</button>
 </section>
 
 <section class="card hidden center" id="musique">
-  <p class="eyebrow">Notre bande-son</p>
-  <h2>🎵 Quelques notes de nous</h2>
-  <p>Il y a des chansons qui nous rappellent une personne, un moment ou un sentiment. J'aimerais que cette playlist rassemble un peu de nous.</p>
-  <p>Quand notre playlist sera prête, tu pourras l'écouter ici. 💗</p>
-  <a class="spotify-link" href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">
-    <button>Écouter sur Spotify ♫</button>
-  </a>
-  <br>
-  <button onclick="show('finale')">Découvrir mon dernier secret ❤️</button>
+ <div class="heart">♫</div>
+ <h2>Une chanson pour toi 🎵</h2>
+ <p>
+  Il y a des chansons qui savent dire ce que les mots n'arrivent pas toujours à exprimer.
+  Celle-ci me fait penser à toi, à nous, et à tout ce que je ressens pour toi. ❤️
+ </p>
+ <a href="https://open.spotify.com/intl-fr/track/4GOHKaImdV8EHdxUBzTEOV?si=d81b3121afcb4681"
+    target="_blank" rel="noopener noreferrer">
+  <button>Écouter notre chanson ♡</button>
+ </a>
+ <p style="margin-top:25px">
+  Prends quelques minutes pour l'écouter, mon amour. 💗
+ </p>
+ <button onclick="show('lettre-finale')">Lire ma lettre d'amour 💌</button>
 </section>
 
-<section class="card hidden center" id="finale">
-  <div class="final-heart">♥</div>
-  <p class="eyebrow">Pour toi, aujourd'hui et demain</p>
-  <h2>Mon dernier secret, Cécile</h2>
+<section class="card hidden center" id="lettre-finale">
+ <div class="small">✧ Du fond de mon cœur ✧</div>
+ <h2>💌 Une lettre pour toi</h2>
 
-  <div class="letter-paper">
-    <p class="letter">Si je pouvais t'offrir quelque chose à la hauteur de ce que tu représentes pour moi, je crois qu'il me faudrait bien plus qu'une page web.
+ <div class="letter-paper">
+  <div class="letter-heading">Ma Cécile,</div>
 
-Je veux continuer à découvrir le monde à tes côtés, à rire avec toi, à te soutenir et à créer encore mille souvenirs.
+  <div class="letter">Depuis le 1er janvier 2025, nous écrivons notre histoire, un jour après l'autre.
 
-Depuis le début de notre histoire, nous avons écrit de jolies pages ensemble, et j'espère qu'il nous en reste une infinité à écrire.
+Je voulais t'offrir quelque chose qui ne soit pas simplement un objet, mais un petit endroit où retrouver tout l'amour que j'ai pour toi.
 
-Joyeux anniversaire, mon amour. Merci d'être toi.
+Merci pour les moments qu'on partage, les sourires, les petites habitudes et tous les souvenirs qu'il nous reste à créer. Tu as une place toute particulière dans ma vie, et j'espère te le montrer encore longtemps, par les grandes déclarations comme par les petits gestes du quotidien.
 
-Je t'aime. ❤️
+Je veux continuer à découvrir le monde à tes côtés, à rire avec toi, à te soutenir et à profiter de tous ces petits instants qui rendent notre vie si belle.
 
-Ton Logan</p>
-  </div>
+J'espère que les années qui nous attendent seront remplies de voyages, de fous rires, de tendresse et de milliers de souvenirs à deux.
 
-  <div style="font-size:38px">🌷 💗 🌷</div>
-  <p class="handwriting">À nous, à notre histoire, et à tout ce qui nous attend. ♡</p>
+Joyeux anniversaire, mon amour. Merci d'être toi, et merci de partager cette aventure avec moi.
+
+Je t'aime. ❤️</div>
+
+  <div class="signature">Ton Logan ♡</div>
+ </div>
+
+ <p style="margin-top:35px">
+  <span style="font-size:32px">🌷 💗 🌷</span><br>
+  Et ce n'est que le début de notre histoire…
+ </p>
 </section>
 
 </main>
 
-<footer>Créé avec amour par Logan, pour Cécile ♡</footer>
+<footer>Créé avec tout mon amour par Logan, pour Cécile ♡</footer>
 
 <script>
-function go(id) {
-  document.getElementById(id).scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+function go(id){
+ document.getElementById(id).scrollIntoView({
+  behavior:'smooth',
+  block:'start'
+ });
 }
 
-function show(id) {
-  const section = document.getElementById(id);
-  section.classList.remove('hidden');
+function show(id){
+ const section=document.getElementById(id);
+ section.classList.remove('hidden');
+ setTimeout(()=>{
   section.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
+   behavior:'smooth',
+   block:'start'
   });
+ },80);
 }
 
-function fleurir() {
-  const bouquet = document.getElementById('bouquet');
-  bouquet.innerHTML = '<span>🌷</span><span>🌸</span><span>🌹</span><span>💗</span><span>🌼</span><span>🌷</span><span>🌸</span>';
-  bouquet.animate(
-    [
-      { transform: 'scale(.65)', opacity: .3 },
-      { transform: 'scale(1.08)', opacity: 1 },
-      { transform: 'scale(1)', opacity: 1 }
-    ],
-    { duration: 850, easing: 'ease-out' }
-  );
+function fleurir(){
+ const bouquet=document.getElementById('bouquet');
+ bouquet.textContent='🌷　🌸　🌷　💗　🌼　🌷　🌸';
+ bouquet.animate(
+  [
+   {transform:'scale(.7)',opacity:.3},
+   {transform:'scale(1.08)',opacity:1},
+   {transform:'scale(1)',opacity:1}
+  ],
+  {duration:800,easing:'ease-out'}
+ );
 }
 
-function creerPaillettes() {
-  const symbols = ['♡', '✧', '♥', '✦'];
-  const sparkle = document.createElement('span');
-  sparkle.className = 'sparkle';
-  sparkle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-  sparkle.style.left = Math.random() * 100 + 'vw';
-  sparkle.style.fontSize = (12 + Math.random() * 17) + 'px';
-  sparkle.style.color = ['#d36c96', '#c7a3e8', '#e4a9c4'][Math.floor(Math.random() * 3)];
-  sparkle.style.animationDuration = (7 + Math.random() * 6) + 's';
-  document.body.appendChild(sparkle);
-  setTimeout(() => sparkle.remove(), 14000);
+function coeurFlottant(){
+ const coeur=document.createElement('span');
+ coeur.className='floating-heart';
+ coeur.textContent=Math.random()>.5?'♡':'♥';
+ coeur.style.left=Math.random()*100+'vw';
+ coeur.style.fontSize=(14+Math.random()*20)+'px';
+ coeur.style.animationDuration=(7+Math.random()*5)+'s';
+ document.body.appendChild(coeur);
+ setTimeout(()=>coeur.remove(),12500);
 }
 
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  setInterval(creerPaillettes, 1100);
-}
-
-const printStyle = document.createElement('style');
-printStyle.textContent = `
-@media print {
-  body { background: white !important; color: #333 !important; }
-  body::before, header, footer, button, .sparkle { display: none !important; }
-  main { width: 100%; }
-  .card { display: none !important; box-shadow: none; border: none; }
-  #lettre { display: block !important; }
-  #lettre .letter-paper { box-shadow: none; border: none; }
-}
-`;
-document.head.appendChild(printStyle);
+setInterval(coeurFlottant,1800);
 </script>
 
 </body>
