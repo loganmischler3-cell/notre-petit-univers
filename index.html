@@ -137,6 +137,43 @@ button:hover{
  color:#d46c97;
 }
 
+/* Photo d'accueil façon Polaroid */
+
+.hero-polaroid{
+ width:min(390px,88%);
+ margin:35px auto 25px;
+ padding:12px 12px 25px;
+ background:#fff;
+ border-radius:5px;
+ box-shadow:0 15px 40px #74445930;
+ transform:rotate(-2deg);
+ transition:transform .4s,box-shadow .4s;
+}
+
+.hero-polaroid:hover{
+ transform:rotate(0deg) scale(1.025);
+ box-shadow:0 20px 45px #74445938;
+}
+
+.hero-polaroid img{
+ display:block;
+ width:100%;
+ height:auto;
+ max-height:570px;
+ object-fit:contain;
+ border-radius:3px;
+ background:#f8e7ee;
+}
+
+.hero-caption{
+ padding:22px 8px 0;
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(30px,5vw,43px);
+ line-height:1.3;
+ text-align:center;
+ color:#a83e6c;
+}
+
 /* Galerie souvenirs */
 
 .intro-gallery{
@@ -157,4 +194,455 @@ button:hover{
  padding:12px 12px 24px;
  border-radius:5px;
  box-shadow:0 9px 25px #74445920;
- transition
+ transition:transform .35s,box-shadow .35s;
+ animation:appear .8s ease both;
+}
+
+.polaroid:nth-child(odd){transform:rotate(-1.5deg)}
+.polaroid:nth-child(even){transform:rotate(1.5deg)}
+
+.polaroid:hover{
+ transform:rotate(0) translateY(-7px) scale(1.025);
+ box-shadow:0 18px 35px #74445930;
+ z-index:2;
+}
+
+.polaroid img{
+ display:block;
+ width:100%;
+ height:clamp(200px,32vw,370px);
+ object-fit:cover;
+ border-radius:3px;
+ background:#f8e7ee;
+}
+
+.caption{
+ padding:19px 8px 0;
+ text-align:center;
+ color:#82465f;
+ font-size:clamp(16px,2vw,21px);
+ line-height:1.55;
+ font-style:italic;
+}
+
+.caption::before{
+ content:"♡";
+ display:block;
+ color:#d47a9f;
+ font-size:23px;
+ margin-bottom:7px;
+ font-style:normal;
+}
+
+/* Bouquet */
+
+.flowers{
+ font-size:clamp(34px,7vw,54px);
+ line-height:1.8;
+ min-height:90px;
+ margin:20px 0;
+}
+
+.bouquet-message{
+ max-width:650px;
+ margin:25px auto;
+ padding:25px;
+ border:1px solid #efbfd2;
+ border-radius:20px;
+ background:linear-gradient(135deg,#fff4f8,#fffafd);
+ animation:appear .9s ease;
+}
+
+.bouquet-message h3{
+ font-family:'Great Vibes',cursive;
+ color:#b74775;
+ font-size:clamp(34px,6vw,48px);
+ font-weight:normal;
+ margin:0 0 12px;
+}
+
+.bouquet-message p{
+ font-size:clamp(17px,2.5vw,20px);
+}
+
+/* Énigme */
+
+input{
+ padding:14px 16px;
+ border:1px solid #e7a9c2;
+ border-radius:14px;
+ font-size:16px;
+ max-width:100%;
+ font-family:inherit;
+ color:var(--text);
+ outline-color:#d47a9f;
+}
+
+.message{min-height:28px}
+
+/* Lettre finale */
+
+.letter-paper{
+ position:relative;
+ max-width:760px;
+ margin:30px auto 5px;
+ padding:clamp(28px,6vw,65px);
+ background:
+  repeating-linear-gradient(
+   transparent,
+   transparent 35px,
+   #d9b5bd30 36px
+  ),
+  #fffaf0;
+ border:1px solid #e8d6c5;
+ box-shadow:0 12px 35px #8c58651c;
+ text-align:left;
+ transform:rotate(-.4deg);
+}
+
+.letter-paper::before{
+ content:"";
+ position:absolute;
+ inset:10px;
+ border:1px solid #e6c7c7;
+ pointer-events:none;
+}
+
+.letter-heading{
+ font-family:'Great Vibes',cursive;
+ text-align:center;
+ font-size:clamp(40px,8vw,65px);
+ color:#b74775;
+ margin:0 0 25px;
+}
+
+.letter{
+ white-space:pre-line;
+ font-size:clamp(17px,2.5vw,20px);
+ line-height:2;
+ color:#684653;
+}
+
+.signature{
+ font-family:'Great Vibes',cursive;
+ font-size:38px;
+ color:#b74775;
+ text-align:right;
+ margin-top:25px;
+}
+
+footer{
+ text-align:center;
+ padding:35px 20px;
+ font:12px Arial,sans-serif;
+ color:#9d7184;
+}
+
+/* Petits cœurs flottants */
+
+.floating-heart{
+ position:fixed;
+ bottom:-40px;
+ pointer-events:none;
+ z-index:5;
+ animation:floatUp linear forwards;
+ opacity:.7;
+}
+
+@keyframes pulse{
+ 50%{transform:scale(1.15)}
+}
+
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes floatUp{
+ from{transform:translateY(0) rotate(0deg);opacity:0}
+ 15%{opacity:.7}
+ to{transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+
+@media(min-width:800px){
+ .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .polaroid:nth-child(7){grid-column:2}
+}
+
+@media(max-width:480px){
+ header{padding-top:55px}
+ .gallery{gap:17px}
+ .polaroid{padding:8px 8px 17px}
+ .polaroid img{height:200px}
+ .caption{font-size:15px;padding-top:12px}
+ .card{border-radius:22px}
+ .hero-polaroid{width:min(340px,92%)}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="small">✧ Un petit monde rien qu'à nous ✧</div>
+
+ <h1>Notre petit<br>univers</h1>
+
+ <p>
+  Pour Cécile, de la part de Logan.<br>
+  J'ai préparé quelques petites surprises pour te rappeler à quel point tu comptes pour moi. 💗
+ </p>
+
+ <div class="date">Depuis le 1er janvier 2025 ♡</div>
+
+ <div class="hero-polaroid">
+  <img src="images/18ans.jpg" alt="Un souvenir précieux de Logan et Cécile">
+  <div class="hero-caption">Je t'aime chaque jour un peu plus.</div>
+ </div>
+
+ <p><button onclick="go('accueil')">Entrer dans notre conte ✨</button></p>
+</header>
+
+<main>
+
+<section class="card center" id="accueil">
+ <div class="heart">♡</div>
+
+ <h2>Bienvenue, mon amour</h2>
+
+ <p>
+  Un petit chemin plein de souvenirs, de tendresse et de magie t'attend.
+  Prends ton temps : chaque étape a été préparée spécialement pour toi.
+ </p>
+
+ <button onclick="show('souvenirs')">Revivre nos souvenirs 📸</button>
+</section>
+
+<section class="card hidden" id="souvenirs">
+
+ <div class="center">
+  <div class="small">✧ Nos petits instants ✧</div>
+  <h2>Un album de nous deux 💗</h2>
+
+  <p class="intro-gallery">
+   Ce sont parfois les choses les plus simples qui deviennent les plus beaux souvenirs.
+   Et moi, je suis heureux de pouvoir les partager avec toi.
+  </p>
+ </div>
+
+ <div class="gallery">
+
+  <article class="polaroid">
+   <img src="images/souvenir.jpg.jpg" alt="Un souvenir de nous deux">
+   <div class="caption">Pour tous nos petits plaisirs de la vie simple que je partage tous les jours avec toi.</div>
+  </article>
+
+  <article class="polaroid">
+   <img src="images/miroir-rose.jpg.jpg" alt="Un moment devant le miroir">
+   <div class="caption">Pour tous nos matins à nous préparer ensemble.</div>
+  </article>
+
+  <article class="polaroid">
+   <img src="images/miroir-vert.jpg.jpg" alt="Un souvenir devant le miroir">
+   <div class="caption">Pour notre façon d'être, tout simplement nous. ❤️</div>
+  </article>
+
+  <article class="polaroid">
+   <img src="images/anniversaire.jpg.jpg" alt="Un souvenir d'anniversaire">
+   <div class="caption">Pour tout l'amour que j'ai à te donner.</div>
+  </article>
+
+  <article class="polaroid">
+   <img src="images/pise.jpg.jpg" alt="Nous deux à Pise">
+   <div class="caption">Pour tous les voyages qui nous attendent.</div>
+  </article>
+
+  <article class="polaroid">
+   <img src="images/tulipes.jpg.jpg" alt="Nous deux au milieu des tulipes">
+   <div class="caption">Pour tous les printemps qu'il nous reste à passer à tes côtés.</div>
+  </article>
+
+  <article class="polaroid">
+   <img src="images/terrasse.jpg.jpg" alt="Un moment ensemble en terrasse">
+   <div class="caption">Pour toutes nos soirées à nous faire rire l'un l'autre.</div>
+  </article>
+
+ </div>
+
+ <div class="center" style="margin-top:35px">
+  <p>Et ce n'est que le début de tous les souvenirs qu'il nous reste à créer… ✨</p>
+  <button onclick="show('jardin')">Une fleur pour toi 🌷</button>
+ </div>
+</section>
+
+<section class="card hidden center" id="jardin">
+ <h2>🌷 Ton jardin magique</h2>
+
+ <p>Un petit bouquet virtuel, juste pour toi. Clique et regarde-le fleurir !</p>
+
+ <div class="flowers" id="bouquet">♡　✿　♡</div>
+
+ <button id="bouton-fleurs" onclick="fleurir()">Faire fleurir le jardin ✨</button>
+
+ <div class="bouquet-message hidden" id="message-bouquet" aria-live="polite">
+  <h3>Une petite surprise pour toi… 💗</h3>
+  <p>
+   Maintenant, mon amour, prends une petite seconde…
+   et retourne-toi doucement. ❤️
+  </p>
+  <p>
+   J'ai quelque chose pour toi, juste ici, en vrai.
+   Joyeux anniversaire, ma Cécile. 🌷
+  </p>
+  <p><i>Je t'aime plus que les mots ne pourront jamais le dire.</i></p>
+ </div>
+
+ <button class="secondary" onclick="show('enigme')">Continuer l'aventure →</button>
+</section>
+
+<section class="card hidden center" id="enigme">
+ <h2>🗝️ Une petite énigme pour toi</h2>
+
+ <p>
+  Mon amour, ton petit trésor se cache quelque part dans la maison. ❤️
+  Pour le trouver, fais appel à ton instinct…
+ </p>
+
+ <p>
+  Cherche un endroit où les bonnes choses attendent patiemment leur heure,
+  où se cachent de quoi préparer de délicieux repas et où nos petites envies
+  gourmandes trouvent leur bonheur.
+ </p>
+
+ <p><i>Tu chauffes, mon cœur… 💗</i></p>
+
+ <button onclick="show('musique')">J'ai une petite idée… 🎁</button>
+</section>
+
+<section class="card hidden center" id="musique">
+ <div class="heart">♫</div>
+
+ <h2>Une chanson pour toi 🎵</h2>
+
+ <p>
+  Il y a des chansons qui savent dire ce que les mots n'arrivent pas toujours à exprimer.
+  Celle-ci me fait penser à toi, à nous, et à tout ce que je ressens pour toi. ❤️
+ </p>
+
+ <a href="https://open.spotify.com/intl-fr/track/4GOHKaImdV8EHdxUBzTEOV?si=2d8f4415a6c14748"
+    target="_blank" rel="noopener noreferrer">
+  <button>Écouter notre chanson ♡</button>
+ </a>
+
+ <p style="margin-top:25px">
+  Prends quelques minutes pour l'écouter, mon amour. 💗
+ </p>
+
+ <button onclick="show('lettre-finale')">Lire ma lettre d'amour 💌</button>
+</section>
+
+<section class="card hidden center" id="lettre-finale">
+ <div class="small">✧ Du fond de mon cœur ✧</div>
+
+ <h2>💌 Une lettre pour toi</h2>
+
+ <div class="letter-paper">
+  <div class="letter-heading">Ma Cécile,</div>
+
+  <div class="letter">Depuis le 1er janvier 2025, nous écrivons notre histoire, un jour après l'autre.
+
+Je voulais t'offrir quelque chose qui ne soit pas simplement un objet, mais un petit endroit où retrouver tout l'amour que j'ai pour toi.
+
+Merci pour les moments qu'on partage, les sourires, les petites habitudes et tous les souvenirs qu'il nous reste à créer. Tu as une place toute particulière dans ma vie, et j'espère te le montrer encore longtemps, par les grandes déclarations comme par les petits gestes du quotidien.
+
+Je veux continuer à découvrir le monde à tes côtés, à rire avec toi, à te soutenir et à profiter de tous ces petits instants qui rendent notre vie si belle.
+
+J'espère que les années qui nous attendent seront remplies de voyages, de fous rires, de tendresse et de milliers de souvenirs à deux.
+
+Joyeux anniversaire, mon amour. Merci d'être toi, et merci de partager cette aventure avec moi.
+
+Je t'aime. ❤️</div>
+
+  <div class="signature">Ton Logan ♡</div>
+ </div>
+
+ <p style="margin-top:35px">
+  <span style="font-size:32px">🌷 💗 🌷</span><br>
+  Et ce n'est que le début de notre histoire…
+ </p>
+</section>
+
+</main>
+
+<footer>Créé avec tout mon amour par Logan, pour Cécile ♡</footer>
+
+<script>
+function go(id){
+ document.getElementById(id).scrollIntoView({
+  behavior:'smooth',
+  block:'start'
+ });
+}
+
+function show(id){
+ const section=document.getElementById(id);
+
+ if(!section) return;
+
+ section.classList.remove('hidden');
+
+ setTimeout(()=>{
+  section.scrollIntoView({
+   behavior:'smooth',
+   block:'start'
+  });
+ },80);
+}
+
+function fleurir(){
+ const bouquet=document.getElementById('bouquet');
+ const message=document.getElementById('message-bouquet');
+ const bouton=document.getElementById('bouton-fleurs');
+
+ bouquet.textContent='🌷　🌸　🌷　💗　🌼　🌷　🌸';
+
+ bouquet.animate(
+  [
+   {transform:'scale(.7)',opacity:.3},
+   {transform:'scale(1.08)',opacity:1},
+   {transform:'scale(1)',opacity:1}
+  ],
+  {duration:800,easing:'ease-out'}
+ );
+
+ message.classList.remove('hidden');
+ bouton.textContent='Le jardin est en fleurs 💗';
+ bouton.disabled=true;
+ bouton.style.opacity='.8';
+
+ message.scrollIntoView({
+  behavior:'smooth',
+  block:'center'
+ });
+}
+
+function coeurFlottant(){
+ const coeur=document.createElement('span');
+
+ coeur.className='floating-heart';
+ coeur.textContent=Math.random()>.5?'♡':'♥';
+ coeur.style.left=Math.random()*100+'vw';
+ coeur.style.fontSize=(14+Math.random()*20)+'px';
+ coeur.style.animationDuration=(7+Math.random()*5)+'s';
+
+ document.body.appendChild(coeur);
+
+ setTimeout(()=>coeur.remove(),12500);
+}
+
+setInterval(coeurFlottant,1800);
+</script>
+
+</body>
+</html>
+```
